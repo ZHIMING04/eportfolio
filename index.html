@@ -35,6 +35,7 @@
                 <li><a href="#journey">Journey</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certs</a></li>
                 <li><a href="#startup">Startup</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -239,12 +240,8 @@
                         <span class="year-badge text-orange" style="color: var(--accent-orange);">YEAR 4</span>
                         <h3>Industry Internship (Incoming)</h3>
                     </div>
-                    <div class="panel-content" style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px;">
+                    <div class="panel-content" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
                         <img src="img/kooqmascot3.png" alt="Year 4 Internship Mascot" style="max-height: 300px; object-fit: contain; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));">
-                        <div class="skills-tags center">
-                            <span class="tag active" style="font-size: 1.1rem; padding: 12px 24px;">Industry Experience</span>
-                            <span class="tag active" style="font-size: 1.1rem; padding: 12px 24px;">Professional Growth</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -300,7 +297,10 @@
     <!-- Featured Projects -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <h2 class="section-title" style="margin-bottom: 0;">Featured <span class="text-gradient">Projects</span></h2>
+                <a href="https://github.com/ZHIMING04/eportfolio/tree/main/Project" target="_blank" class="view-more-link">View More <i class="ph ph-arrow-right"></i></a>
+            </div>
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="gsap-card project-card highlight-card">
@@ -421,7 +421,7 @@
     <section id="certifications" class="section certifications-section" style="padding-top: 0;">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
-            <div class="projects-grid">
+            <div class="cert-grid">
                 <!-- Cert 1 -->
                 <div class="gsap-card cert-card">
                     <div class="project-content" style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;">
@@ -430,8 +430,7 @@
                             <span class="tag" style="background: rgba(245, 131, 32, 0.1); color: var(--accent-orange); border: 1px solid rgba(245, 131, 32, 0.3); font-weight: 800; padding: 6px 12px;">MAY 2026</span>
                         </div>
                         <h3 style="font-size: 1.6rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em;">AWS Academy Graduate - Cloud Data Pipeline Builder</h3>
-                        <p class="muted-text" style="margin-bottom: 16px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Amazon Web Services (AWS)</strong></p>
-                        <a href="#" target="_blank" class="btn btn-outline small" style="margin-bottom: 24px; align-self: flex-start; border-color: rgba(255,255,255,0.2); padding: 6px 14px; font-size: 0.85rem;">Show credential <i class="ph ph-arrow-square-out" style="margin-left: 6px;"></i></a>
+                        <p class="muted-text" style="margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Amazon Web Services (AWS)</strong></p>
                         <div class="skills-tags" style="margin-top: auto;">
                             <span class="tag">AWS</span><span class="tag">Data Pipelines</span>
                         </div>
@@ -445,8 +444,7 @@
                             <span class="tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.3); font-weight: 800; padding: 6px 12px;">MAY 2026</span>
                         </div>
                         <h3 style="font-size: 1.6rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em;">Alteryx Designer Core Certification</h3>
-                        <p class="muted-text" style="margin-bottom: 16px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Alteryx</strong> <br><span style="font-size: 0.85rem;">Expires May 2028</span></p>
-                        <a href="#" target="_blank" class="btn btn-outline small" style="margin-bottom: 24px; align-self: flex-start; border-color: rgba(255,255,255,0.2); padding: 6px 14px; font-size: 0.85rem;">Show credential <i class="ph ph-arrow-square-out" style="margin-left: 6px;"></i></a>
+                        <p class="muted-text" style="margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Alteryx</strong> <br><span style="font-size: 0.85rem;">Expires May 2028</span></p>
                         <div class="skills-tags" style="margin-top: auto;">
                             <span class="tag">Alteryx</span><span class="tag">Data Analysis</span>
                         </div>
@@ -460,8 +458,7 @@
                             <span class="tag" style="background: rgba(10, 228, 72, 0.1); color: var(--accent-green); border: 1px solid rgba(10, 228, 72, 0.3); font-weight: 800; padding: 6px 12px;">FEB 2026</span>
                         </div>
                         <h3 style="font-size: 1.6rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em;">Microsoft Certified: Azure Data Fundamentals</h3>
-                        <p class="muted-text" style="margin-bottom: 16px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Microsoft</strong></p>
-                        <a href="#" target="_blank" class="btn btn-outline small" style="margin-bottom: 24px; align-self: flex-start; border-color: rgba(255,255,255,0.2); padding: 6px 14px; font-size: 0.85rem;">Show credential <i class="ph ph-arrow-square-out" style="margin-left: 6px;"></i></a>
+                        <p class="muted-text" style="margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1;">Issued by <strong style="color: #fff;">Microsoft</strong></p>
                         <div class="skills-tags" style="margin-top: auto;">
                             <span class="tag">PostgreSQL</span><span class="tag">Azure Synapse</span>
                         </div>
