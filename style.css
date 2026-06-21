@@ -360,6 +360,23 @@ body {
     50% { transform: translateY(-20px); }
 }
 
+/* --- Certifications --- */
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+}
+
+.cert-card:nth-child(1):hover { box-shadow: 10px 10px 0px var(--accent-orange); border-color: var(--accent-orange); }
+.cert-card:nth-child(2):hover { box-shadow: 10px 10px 0px var(--accent-purple); border-color: var(--accent-purple); }
+.cert-card:nth-child(3):hover { box-shadow: 10px 10px 0px var(--accent-green); border-color: var(--accent-green); }
+.cert-card:nth-child(4):hover { box-shadow: 10px 10px 0px var(--text-main); border-color: var(--text-main); }
+
 .floating-asterisk {
     position: absolute;
     top: 10%;
@@ -1161,3 +1178,20 @@ body {
         border-bottom: 2px dashed rgba(255,255,255,0.1);
     }
 }
+
+/* --- Certifications --- */
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+}
+
+.cert-card:nth-child(1):hover { box-shadow: 10px 10px 0px var(--accent-orange); border-color: var(--accent-orange); }
+.cert-card:nth-child(2):hover { box-shadow: 10px 10px 0px var(--accent-purple); border-color: var(--accent-purple); }
+.cert-card:nth-child(3):hover { box-shadow: 10px 10px 0px var(--accent-green); border-color: var(--accent-green); }
+.cert-card:nth-child(4):hover { box-shadow: 10px 10px 0px var(--text-main); border-color: var(--text-main); }
