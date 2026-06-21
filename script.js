@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 trigger: ".journey-section", // Pin the whole section instead of just the wrapper
                 pin: true, 
                 scrub: 1, // Smooth scrubbing
-                start: "top 12%", // Start pinning when the section is slightly below the top (accounts for navbar)
+                start: "top top", // Start pinning exactly at the top. The CSS padding-top handles the navbar clearance!
                 snap: 1 / (panels.length - 1),
                 end: () => "+=" + horizontalContainer.offsetWidth
             }

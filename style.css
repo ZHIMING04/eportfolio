@@ -265,24 +265,38 @@ body {
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 40px;
+    align-items: center; /* Vertically align tags of different sizes */
 }
 
 .role-tag {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 3.5rem); /* Massive, comfortable text */
     font-weight: 700;
-    padding: 12px 28px;
     border-radius: 12px;
     color: #111;
     border: none;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); /* Solid shadow */
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.5); /* Solid shadow */
     letter-spacing: -0.02em;
     display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-tag:hover {
+    transform: translateY(-5px) rotate(0deg) !important;
+    box-shadow: 6px 8px 0px rgba(0,0,0,0.5);
 }
 
 .role-tag.bg-green { background-color: var(--accent-green); }
 .role-tag.bg-pink { background-color: #fca5a5; } /* Vibrant pinkish */
 .role-tag.bg-orange { background-color: var(--accent-orange); }
+
+/* GSAP-style random tag modifiers */
+.tag-size-l { font-size: clamp(1.8rem, 4vw, 2.8rem); padding: 12px 24px; }
+.tag-size-m { font-size: clamp(1.3rem, 3vw, 2.0rem); padding: 8px 18px; }
+.tag-size-s { font-size: clamp(1rem, 2vw, 1.4rem); padding: 6px 14px; }
+
+.rot-left { transform: rotate(-3deg); }
+.rot-right { transform: rotate(4deg); }
+.rot-none { transform: rotate(0deg); }
 
 .hero-intro {
     font-size: 1.3rem;
@@ -374,11 +388,27 @@ body {
 /* --- Horizontal Journey Section --- */
 .journey-section {
     overflow: hidden; /* Hide horizontal overflow during scroll */
+    height: 100vh; /* Lock height to viewport to prevent bottom cut-off during pin */
+    padding-top: 100px; /* Account for navbar */
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-section .container {
+    flex-shrink: 0; /* Keep title size intact */
+}
+
+.journey-section .section-title {
+    margin-bottom: 20px; /* Tighter spacing to save vertical room */
 }
 
 .horizontal-scroll-wrapper {
+    flex-grow: 1; /* Take remaining vertical space */
     width: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center; /* Center panels vertically */
 }
 
 .horizontal-scroll-container {
@@ -392,9 +422,10 @@ body {
 .journey-panel {
     width: 80vw; /* Each panel takes up most of the screen width */
     max-width: 900px;
+    max-height: 100%; /* Fit within wrapper */
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
     flex-shrink: 0;
 }
 
@@ -422,6 +453,18 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    overflow-y: auto; /* Enable internal scrolling if cards are too tall */
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+/* Custom thin scrollbar for panel content */
+.panel-content::-webkit-scrollbar {
+    width: 6px;
+}
+.panel-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 10px;
 }
 
 .semester-card {
@@ -646,8 +689,12 @@ body {
     background-color: #fcfce9; /* GSAP light cream footer */
     color: #111;
     border-top: none;
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 60px; /* Reduced from 100px to make it less tall */
+    padding-bottom: 30px; /* Reduced from 40px */
+}
+
+.footer-info p {
+    margin-bottom: 32px; /* Add comfortable spacing between text and the button below it */
 }
 
 .footer .text-muted, .footer .muted-text {
