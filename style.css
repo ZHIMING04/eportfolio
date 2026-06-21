@@ -942,19 +942,7 @@ body {
     left: 60px;
     width: 160px;
     z-index: 10;
-    animation: mascotPeek 6s ease-in-out infinite;
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
-    transition: transform 0.3s ease;
-}
-
-.kooq-mascot:hover {
-    animation-play-state: paused;
-    transform: translateY(-20px) scale(1.1) rotate(-5deg);
-}
-
-@keyframes mascotPeek {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(4deg); }
 }
 
 .massive-card {
@@ -1153,7 +1141,7 @@ body {
     .horizontal-scroll-container {
         flex-direction: column;
         width: 100% !important; /* Override JS inline width */
-        padding: 0;
+        padding: 0 24px;
         gap: 40px;
     }
     
