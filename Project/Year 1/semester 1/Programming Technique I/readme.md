@@ -1,5 +1,3 @@
-
-```markdown
 # Programming Technique I
 
 ## 📘 Course Overview
@@ -50,4 +48,3 @@ Programming Technique I helped me build my first real foundation in programming.
 I learned that writing code is not only about syntax, but also about understanding the problem, planning the logic, and designing a clear solution before implementation.
 
 The assignments trained me to think step by step, especially when dealing with loops, conditions, and calculations. This course gave me the confidence to continue learning more advanced programming, data structures, and software development in later semesters.
-```

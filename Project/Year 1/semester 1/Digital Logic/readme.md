@@ -1,5 +1,3 @@
-
-```markdown
 # Digital Logic — Lift Electronic Controller System
 
 ## 📘 Course Overview
@@ -60,4 +58,3 @@ This project helped me understand how digital logic is applied beyond theory. De
 The most valuable part was seeing how basic components such as gates, counters, comparators, and decoders can work together to form a complete control system. It also improved my ability to break down a real-world problem into smaller logic blocks and integrate them into one functional design.
 
 Overall, Digital Logic strengthened my foundation in computer hardware concepts and gave me a clearer understanding of how binary logic supports modern computing systems.
-```

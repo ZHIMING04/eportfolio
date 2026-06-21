@@ -1,4 +1,3 @@
-```markdown
 # Technology & Information System — UTM EDU
 
 ## 📘 Course Overview
@@ -57,5 +56,4 @@ This project helped me understand that technology is not only about building sys
 Through interviews, discussion, prototyping, and testing, I learned how important it is to understand users before designing a solution.
 
 The biggest lesson was that a good application should not only have useful features, but should also be simple, accessible, and relevant to daily student life. This project strengthened my interest in building practical digital products that combine user experience, information systems, and real-world impact.
-```
 
