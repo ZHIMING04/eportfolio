@@ -615,10 +615,10 @@ body {
     transform: translateY(-10px);
 }
 
-/* Brutalist solid shadows on hover per card */
-.project-card:not(.highlight-card):nth-child(2):hover { box-shadow: 10px 10px 0px var(--accent-green); border-color: var(--accent-green); }
-.project-card:not(.highlight-card):nth-child(3):hover { box-shadow: 10px 10px 0px var(--accent-orange); border-color: var(--accent-orange); }
-.project-card:not(.highlight-card):nth-child(4):hover { box-shadow: 10px 10px 0px var(--accent-purple); border-color: var(--accent-purple); }
+/* Brutalist solid shadows on hover for small cards */
+.project-card:not(.highlight-card):nth-child(3):hover { box-shadow: 10px 10px 0px var(--accent-green); border-color: var(--accent-green); }
+.project-card:not(.highlight-card):nth-child(4):hover { box-shadow: 10px 10px 0px var(--accent-orange); border-color: var(--accent-orange); }
+.project-card:not(.highlight-card):nth-child(5):hover { box-shadow: 10px 10px 0px var(--accent-purple); border-color: var(--accent-purple); }
 
 .project-card.highlight-card {
     grid-column: 1 / -1;
@@ -628,6 +628,22 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
+}
+
+.project-card.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 0px var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+.project-card.highlight-card.reversed {
+    border-color: rgba(245, 131, 32, 0.4);
+    background: linear-gradient(145deg, var(--bg-card) 0%, rgba(245, 131, 32, 0.05) 100%);
+}
+
+.project-card.highlight-card.reversed:hover {
+    box-shadow: -10px 10px 0px var(--accent-orange);
+    border-color: var(--accent-orange);
 }
 
 .project-image {
