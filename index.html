@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Creative Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
 
     <!-- Navigation Bar -->
     <nav id="navbar" class="navbar">
@@ -29,9 +34,6 @@
                 <li><a href="#startup">Startup</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                <i class="ph ph-moon"></i>
-            </button>
             <button class="mobile-menu-btn">
                 <i class="ph ph-list"></i>
             </button>
@@ -42,22 +44,35 @@
     <header id="hero" class="section hero-section">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Zhi Ming Tan</h1>
+                <h1 class="hero-title">Zhi Ming <br><span class="hero-title-highlight">Tan</span></h1>
+                
                 <div class="hero-titles">
-                    <span class="gradient-text">Data Engineering Student</span> <span class="dot">•</span> 
-                    <span class="gradient-text-alt">Cloud Builder</span> <span class="dot">•</span> 
-                    <span class="gradient-text-orange">Founder of Koo'Q</span>
+                    <span class="role-tag">Data Engineer</span>
+                    <span class="role-tag">Cloud Builder</span>
+                    <span class="role-tag outline">Founder of Koo'Q</span>
                 </div>
-                <p class="hero-intro">I build data-driven systems, cloud solutions, and products that connect talent with opportunities.</p>
+                
+                <p class="hero-intro">I build <span class="text-green">data-driven systems</span>, cloud solutions, and products that connect talent with opportunities.</p>
+                
                 <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#projects" class="btn btn-primary">Explore Work</a>
                     <a href="#resume" class="btn btn-outline">Download Resume</a>
-                    <a href="https://kooq.my" target="_blank" class="btn btn-text">Visit Koo'Q <i class="ph ph-arrow-up-right"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="avatar-placeholder">
-                    <i class="ph ph-user"></i>
+            
+            <!-- Creative Visual Element instead of boring placeholder -->
+            <div class="hero-visual">
+                <div class="abstract-shape">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="url(#grad1)" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,80.7,-46.2C89.6,-33.3,94.5,-16.7,92.6,-1.1C90.6,14.5,81.9,29,71.6,40.9C61.3,52.8,49.4,62.1,36,69.5C22.6,76.9,7.7,82.4,-6.9,81.4C-21.5,80.4,-35.8,72.9,-48.6,63.4C-61.4,53.9,-72.7,42.4,-79.8,28.6C-86.9,14.8,-89.8,-1.3,-86.3,-16.2C-82.8,-31.1,-72.9,-44.8,-60.6,-53.4C-48.3,-62,-33.6,-65.5,-20.1,-69C-6.6,-72.5,5.7,-76,17.1,-77.9C28.5,-79.8,30.5,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+                      <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#f58320;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="floating-asterisk">✶</div>
                 </div>
             </div>
         </div>
@@ -66,28 +81,26 @@
     <!-- About Me -->
     <section id="about" class="section about-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="title">About Me</h2>
-            </div>
+            <h2 class="section-title">About <span class="text-green">Me</span></h2>
             <div class="about-grid">
-                <div class="about-bio">
-                    <p>I am a Data Engineering student passionate about building scalable systems, cloud infrastructure, and products that create meaningful impact.</p>
-                    <p>Beyond technical development, I enjoy entrepreneurship and currently lead the development of Koo'Q, a talent verification and opportunity matching ecosystem.</p>
+                <div class="about-text">
+                    <p class="large-text">I am a Data Engineering student passionate about building scalable systems, cloud infrastructure, and products that create meaningful impact.</p>
+                    <p class="muted-text">Beyond technical development, I enjoy entrepreneurship and currently lead the development of Koo'Q, a talent verification and opportunity matching ecosystem.</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
+                <div class="about-stats-grid">
+                    <div class="gsap-card stat-card">
                         <span class="stat-label">University</span>
                         <span class="stat-value">UTM</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="gsap-card stat-card">
                         <span class="stat-label">Programme</span>
                         <span class="stat-value">CS (Data Eng)</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="gsap-card stat-card">
                         <span class="stat-label">CGPA</span>
-                        <span class="stat-value highlight">3.98</span>
+                        <span class="stat-value text-green">3.98</span>
                     </div>
-                    <div class="stat-card">
+                    <div class="gsap-card stat-card">
                         <span class="stat-label">Languages</span>
                         <span class="stat-value">English, Mandarin, Malay</span>
                     </div>
@@ -96,45 +109,45 @@
         </div>
     </section>
 
-    <!-- Academic Journey -->
-    <section id="journey" class="section academic-journey">
+    <!-- Academic Journey (Horizontal Scroll) -->
+    <section id="journey" class="section journey-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="title">Academic Journey</h2>
-                <p class="subtitle">A structured overview of my learning progression at UTM.</p>
-            </div>
-            <div class="roadmap">
+            <h2 class="section-title">Academic <span class="text-gradient">Journey</span></h2>
+        </div>
+        
+        <!-- The Horizontal Scroll Container -->
+        <div class="horizontal-scroll-wrapper">
+            <div class="horizontal-scroll-container">
+                
                 <!-- YEAR 1 -->
-                <div class="year-card" data-year="1">
-                    <div class="year-header">
-                        <div class="year-icon"><i class="ph ph-desktop"></i></div>
-                        <div class="year-info">
-                            <span class="year-label">Year 1</span>
-                            <h3 class="year-title">Computing Foundations</h3>
-                        </div>
+                <div class="journey-panel">
+                    <div class="panel-header">
+                        <span class="year-badge">YEAR 1</span>
+                        <h3>Computing Foundations</h3>
                     </div>
-                    <div class="semesters-grid">
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 1</h4>
-                            </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Digital Logic</li><li>Programming Technique I</li><li>Technology & Information System</li></ul>
-                                </div>
+                    <div class="panel-content">
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 1</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Digital Logic</li>
+                                    <li>Programming Technique I</li>
+                                    <li>Technology & Information System</li>
+                                </ul>
                             </div>
                             <div class="skills-tags"><span class="tag">Programming Logic</span><span class="tag">C++</span><span class="tag">Digital Systems</span></div>
                         </div>
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 2</h4>
-                            </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Computer Organization and Architecture</li><li>Human Computer Interaction</li><li>Programming Technique II</li><li>System Analysis and Design</li></ul>
-                                </div>
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 2</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Computer Organization and Architecture</li>
+                                    <li>Human Computer Interaction</li>
+                                    <li>Programming Technique II</li>
+                                    <li>System Analysis and Design</li>
+                                </ul>
                             </div>
                             <div class="skills-tags"><span class="tag">OOP</span><span class="tag">UI/UX</span><span class="tag">System Analysis</span></div>
                         </div>
@@ -142,78 +155,77 @@
                 </div>
 
                 <!-- YEAR 2 -->
-                <div class="year-card" data-year="2">
-                    <div class="year-header">
-                        <div class="year-icon"><i class="ph ph-database"></i></div>
-                        <div class="year-info">
-                            <span class="year-label">Year 2</span>
-                            <h3 class="year-title">Software, Databases & Data Analysis</h3>
-                        </div>
+                <div class="journey-panel">
+                    <div class="panel-header">
+                        <span class="year-badge">YEAR 2</span>
+                        <h3>Software, Databases & Data Analysis</h3>
                     </div>
-                    <div class="semesters-grid">
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 3</h4>
+                    <div class="panel-content">
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 3</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Data Structure and Algorithm</li>
+                                    <li>Database</li>
+                                    <li>Network Communication</li>
+                                    <li>Software Engineering</li>
+                                    <li>System Development Technology</li>
+                                </ul>
                             </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Data Structure and Algorithm</li><li>Database</li><li>Network Communication</li><li>Software Engineering</li><li>System Development Technology</li></ul>
-                                </div>
-                            </div>
-                            <div class="skills-tags"><span class="tag">SQL</span><span class="tag">Database Design</span><span class="tag">Algorithms</span><span class="tag">Networking</span></div>
+                            <div class="skills-tags"><span class="tag">SQL</span><span class="tag">Database Design</span><span class="tag">Algorithms</span></div>
                         </div>
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 4</h4>
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 4</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Data Analytics Programming</li>
+                                    <li>Data Mining</li>
+                                    <li>Object-Oriented Programming</li>
+                                    <li>Operating System</li>
+                                </ul>
                             </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Data Analytics Programming</li><li>Data Mining</li><li>Object-Oriented Programming</li><li>Operating System</li></ul>
-                                </div>
-                            </div>
-                            <div class="skills-tags"><span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">Data Mining</span><span class="tag">Java</span></div>
+                            <div class="skills-tags"><span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">Data Mining</span></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- YEAR 3 -->
-                <div class="year-card" data-year="3">
-                    <div class="year-header">
-                        <div class="year-icon"><i class="ph ph-chart-line-up"></i></div>
-                        <div class="year-info">
-                            <span class="year-label">Year 3</span>
-                            <h3 class="year-title">Applied Data Engineering</h3>
-                        </div>
+                <div class="journey-panel">
+                    <div class="panel-header">
+                        <span class="year-badge">YEAR 3</span>
+                        <h3>Applied Data Engineering</h3>
                     </div>
-                    <div class="semesters-grid">
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 5</h4>
-                            </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Artificial Intelligence</li><li>Database Programming</li><li>Enterprise System Development & Modelling</li></ul>
-                                </div>
+                    <div class="panel-content">
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 5</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Artificial Intelligence</li>
+                                    <li>Database Programming</li>
+                                    <li>Enterprise System Development & Modelling</li>
+                                </ul>
                             </div>
                             <div class="skills-tags"><span class="tag">AI</span><span class="tag">Advanced SQL</span><span class="tag">Enterprise Systems</span></div>
                         </div>
-                        <div class="semester-card">
-                            <div class="semester-header">
-                                <h4>Semester 6</h4>
-                            </div>
-                            <div class="semester-content">
-                                <div class="content-block">
-                                    <h5>Courses</h5>
-                                    <ul><li>Application Development</li><li>Business Intelligence</li><li>High-Performance Data Processing</li><li>Special Topic in Data Engineering</li></ul>
-                                </div>
+                        <div class="gsap-card semester-card">
+                            <h4>Semester 6</h4>
+                            <div class="course-list">
+                                <h5>COURSES</h5>
+                                <ul>
+                                    <li>Application Development</li>
+                                    <li>Business Intelligence</li>
+                                    <li>High-Performance Data Processing</li>
+                                    <li>Special Topic in Data Engineering</li>
+                                </ul>
                             </div>
                             <div class="skills-tags"><span class="tag">BI</span><span class="tag">Data Pipelines</span><span class="tag">Data Engineering</span></div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -221,35 +233,33 @@
     <!-- Technical Skills -->
     <section id="skills" class="section skills-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
+            <h2 class="section-title">Technical <span class="text-green">Skills</span></h2>
+            <div class="skills-bento-grid">
+                <div class="gsap-card skill-category span-2">
                     <h3>Programming</h3>
-                    <div class="skills-tags">
+                    <div class="skills-tags huge">
                         <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">R</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="gsap-card skill-category span-2">
                     <h3>Data Engineering</h3>
                     <div class="skills-tags">
                         <span class="tag">ETL</span><span class="tag">Data Pipelines</span><span class="tag">Data Warehousing</span><span class="tag">Data Modelling</span><span class="tag">Data Analytics</span><span class="tag">Data Mining</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="gsap-card skill-category span-1">
                     <h3>Cloud</h3>
                     <div class="skills-tags">
-                        <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">CloudFront</span>
+                        <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">IAM</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="gsap-card skill-category span-1">
                     <h3>Development</h3>
                     <div class="skills-tags">
-                        <span class="tag">Laravel</span><span class="tag">React</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">REST API</span>
+                        <span class="tag">Laravel</span><span class="tag">React</span><span class="tag">Git</span><span class="tag">REST API</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="gsap-card skill-category span-2">
                     <h3>Tools</h3>
                     <div class="skills-tags">
                         <span class="tag">VS Code</span><span class="tag">Jupyter Notebook</span><span class="tag">MySQL</span><span class="tag">Power BI</span>
@@ -262,45 +272,39 @@
     <!-- Featured Projects -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="title">Featured Projects</h2>
-            </div>
+            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder"><i class="ph ph-rocket-launch"></i></div>
-                    <div class="project-info">
-                        <h3>Koo'Q</h3>
+                <div class="gsap-card project-card highlight-card">
+                    <div class="project-content">
+                        <h3 class="huge-title">Koo'Q</h3>
                         <p>Talent verification engine and opportunity matching ecosystem.</p>
                         <div class="skills-tags">
                             <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">Cloud</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="view-btn"><i class="ph ph-github-logo"></i> Code</a>
-                            <a href="#" class="view-btn"><i class="ph ph-globe"></i> Demo</a>
+                            <a href="#" class="btn btn-outline small">GitHub</a>
+                            <a href="#" class="btn btn-primary small">Live Demo</a>
                         </div>
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder"><i class="ph ph-graduation-cap"></i></div>
-                    <div class="project-info">
+                <div class="gsap-card project-card">
+                    <div class="project-content">
                         <h3>NexScholar</h3>
                         <p>System enhancement and optimization work.</p>
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder"><i class="ph ph-cloud"></i></div>
-                    <div class="project-info">
+                <div class="gsap-card project-card">
+                    <div class="project-content">
                         <h3>Azure Data Pipeline</h3>
                         <p>University cloud data engineering project involving Azure services and ETL pipelines.</p>
                     </div>
                 </div>
                 <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder"><i class="ph ph-amazon-logo"></i></div>
-                    <div class="project-info">
+                <div class="gsap-card project-card">
+                    <div class="project-content">
                         <h3>AWS Cloud Exploration</h3>
                         <p>Personal exploration project involving EC2, S3, IAM, and CloudFront.</p>
                     </div>
@@ -309,19 +313,17 @@
         </div>
     </section>
 
-    <!-- Internship & Achievements -->
+    <!-- Experience & Achievements -->
     <section id="experience" class="section experience-section">
         <div class="container">
-            <div class="split-grid">
+            <div class="split-layout">
                 <!-- Internship -->
-                <div>
-                    <div class="section-header left-align">
-                        <h2 class="title">Internship</h2>
-                    </div>
-                    <div class="timeline-card">
+                <div class="split-col">
+                    <h2 class="section-title">Internship</h2>
+                    <div class="gsap-card timeline-card">
                         <div class="card-header">
                             <h3>PETRONAS Digital</h3>
-                            <span class="role-title">Cloud Database Engineering Intern</span>
+                            <span class="role-badge">Cloud Database Engineering Intern</span>
                         </div>
                         <ul class="task-list">
                             <li>Cloud database operations</li>
@@ -333,37 +335,28 @@
                     </div>
                 </div>
                 <!-- Achievements -->
-                <div id="achievements">
-                    <div class="section-header left-align">
-                        <h2 class="title">Achievements</h2>
-                    </div>
+                <div class="split-col">
+                    <h2 class="section-title">Achievements</h2>
                     <ul class="achievement-list">
-                        <li>
-                            <i class="ph-fill ph-trophy color-gold"></i>
+                        <li class="gsap-card">
+                            <i class="ph-fill ph-trophy text-orange"></i>
                             <div>
                                 <strong>Business Innovation Challenge</strong>
-                                <span>Champion</span>
+                                <span class="muted-text">Champion</span>
                             </div>
                         </li>
-                        <li>
-                            <i class="ph-fill ph-globe-hemisphere-east color-blue"></i>
+                        <li class="gsap-card">
+                            <i class="ph-fill ph-globe text-green"></i>
                             <div>
                                 <strong>AJBIEX Jakarta</strong>
-                                <span>International Representative</span>
+                                <span class="muted-text">International Representative</span>
                             </div>
                         </li>
-                        <li>
-                            <i class="ph-fill ph-medal color-gold"></i>
+                        <li class="gsap-card">
+                            <i class="ph-fill ph-medal text-purple"></i>
                             <div>
                                 <strong>National STEM Rocket Project</strong>
-                                <span>Gold Award</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="ph-fill ph-rocket color-purple"></i>
-                            <div>
-                                <strong>Microsoft AI Hackathon</strong>
-                                <span>Finalist</span>
+                                <span class="muted-text">Gold Award</span>
                             </div>
                         </li>
                     </ul>
@@ -375,31 +368,27 @@
     <!-- Startup Journey -->
     <section id="startup" class="section startup-section">
         <div class="container">
-            <div class="startup-card">
-                <div class="section-header text-center">
-                    <h2 class="title gradient-text-orange">Startup Journey: Koo'Q</h2>
-                </div>
+            <div class="gsap-card massive-card text-center">
+                <h2 class="section-title">Building <span class="text-orange">Koo'Q</span></h2>
+                <p class="large-text max-w-800 center-block">Creating a talent verification ecosystem that allows organizations to discover high-potential individuals through evidence of action.</p>
+                
                 <div class="startup-grid">
                     <div class="startup-block">
-                        <h4><i class="ph ph-eye"></i> Vision</h4>
-                        <p>Create a talent verification ecosystem that allows organizations to discover high-potential individuals through evidence of action.</p>
-                    </div>
-                    <div class="startup-block">
-                        <h4><i class="ph ph-warning"></i> Problem</h4>
+                        <h4 class="text-green">The Problem</h4>
                         <p>Traditional resumes fail to capture many forms of student potential.</p>
                     </div>
-                    <div class="startup-block full-width">
-                        <h4><i class="ph ph-lightbulb"></i> Solution</h4>
-                        <p>Collect and structure talent signals from Competitions, Events, Leadership, Projects, and Activities.</p>
+                    <div class="startup-block">
+                        <h4 class="text-purple">The Solution</h4>
+                        <p>Collect and structure talent signals from Competitions, Events, Leadership, and Projects.</p>
                     </div>
-                    <div class="startup-block full-width">
-                        <h4><i class="ph ph-target"></i> Current Focus</h4>
-                        <div class="skills-tags">
-                            <span class="tag">Data Collection</span>
-                            <span class="tag">Talent Verification</span>
-                            <span class="tag">AI Matching</span>
-                            <span class="tag">Platform Growth</span>
-                        </div>
+                </div>
+                
+                <div class="current-focus">
+                    <h4>Current Focus</h4>
+                    <div class="skills-tags center">
+                        <span class="tag active">Data Collection</span>
+                        <span class="tag active">Talent Verification</span>
+                        <span class="tag active">AI Matching</span>
                     </div>
                 </div>
             </div>
@@ -407,27 +396,27 @@
     </section>
 
     <!-- Footer & Contact -->
-    <footer id="contact" class="footer">
+    <footer id="contact" class="footer section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <h2 class="footer-title">Let's Connect</h2>
-                    <p>Open for opportunities and collaborations.</p>
-                    <a id="resume" href="#" class="btn btn-primary mt-4">Download Resume <i class="ph ph-download-simple"></i></a>
+            <h2 class="section-title giant">Let's <br><span class="text-gradient">Connect.</span></h2>
+            
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <p class="large-text muted-text">Open for opportunities and collaborations.</p>
+                    <a id="resume" href="#" class="btn btn-primary mt-4">Download Resume</a>
                 </div>
-                <div class="footer-right">
-                    <div class="social-links">
-                        <a href="mailto:your_email_here" class="social-link"><i class="ph ph-envelope-simple"></i> Email</a>
-                        <a href="https://linkedin.com/in/zhimingtan" target="_blank" class="social-link"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
-                        <a href="https://github.com/ZHIMING04" target="_blank" class="social-link"><i class="ph ph-github-logo"></i> GitHub</a>
-                        <a href="https://kooq.my" target="_blank" class="social-link"><i class="ph ph-globe"></i> Website</a>
-                        <a href="https://instagram.com/reynard0411" target="_blank" class="social-link"><i class="ph ph-instagram-logo"></i> Instagram</a>
-                    </div>
+                
+                <div class="social-links-big">
+                    <a href="mailto:your_email_here" class="social-link">Email ↗</a>
+                    <a href="https://linkedin.com/in/zhimingtan" target="_blank" class="social-link">LinkedIn ↗</a>
+                    <a href="https://github.com/ZHIMING04" target="_blank" class="social-link">GitHub ↗</a>
+                    <a href="https://kooq.my" target="_blank" class="social-link">Koo'Q ↗</a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>Built by Zhi Ming Tan</p>
-                <p class="muted">Data Engineer • Cloud Builder • Founder</p>
+                <p>Built by Zhi Ming Tan. Design inspired by GSAP.</p>
+                <p class="muted-text">Data Engineer • Cloud Builder • Founder</p>
             </div>
         </div>
     </footer>

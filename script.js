@@ -1,53 +1,25 @@
-// Register GSAP ScrollTrigger
+// Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- Theme Toggle Logic ---
-    const themeBtn = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-    const themeIcon = themeBtn.querySelector('i');
-
-    // Check local storage for saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    htmlEl.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeBtn.addEventListener('click', () => {
-        const currentTheme = htmlEl.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        htmlEl.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.classList.remove('ph-moon');
-            themeIcon.classList.add('ph-sun');
-        } else {
-            themeIcon.classList.remove('ph-sun');
-            themeIcon.classList.add('ph-moon');
-        }
-    }
-
-    // --- Hero Section Animation (on load) ---
+    // --- Initial Load Animations ---
     const tlHero = gsap.timeline();
     
     tlHero.from(".hero-title", {
-        y: 40,
+        y: 100,
         opacity: 0,
-        duration: 1,
-        ease: "power3.out",
+        duration: 1.2,
+        ease: "power4.out",
         delay: 0.2
     })
-    .from(".hero-titles", {
+    .from(".hero-titles .role-tag", {
         y: 20,
         opacity: 0,
         duration: 0.8,
+        stagger: 0.1,
         ease: "power3.out"
-    }, "-=0.6")
+    }, "-=0.8")
     .from(".hero-intro", {
         y: 20,
         opacity: 0,
@@ -61,137 +33,107 @@ document.addEventListener("DOMContentLoaded", () => {
         stagger: 0.1,
         ease: "power3.out"
     }, "-=0.6")
-    .from(".avatar-placeholder", {
+    .from(".hero-visual", {
         scale: 0.8,
         opacity: 0,
-        duration: 1,
-        ease: "back.out(1.5)"
-    }, "-=1");
+        duration: 1.5,
+        ease: "elastic.out(1, 0.5)"
+    }, "-=1.2");
 
-    // --- Generic Section Reveals ---
-    const sections = gsap.utils.toArray(".section:not(.hero-section)");
-    
-    sections.forEach(section => {
-        const header = section.querySelector(".section-header");
+
+    // --- Background Shapes Parallax (Mouse move) ---
+    document.addEventListener("mousemove", (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
         
-        if (header) {
-            gsap.from(header, {
+        gsap.to(".shape-1", {
+            x: (x - 0.5) * 50,
+            y: (y - 0.5) * 50,
+            ease: "power2.out"
+        });
+        gsap.to(".shape-2", {
+            x: (x - 0.5) * -70,
+            y: (y - 0.5) * -70,
+            ease: "power2.out"
+        });
+    });
+
+
+    // --- Generic Section Title Reveals ---
+    const sectionTitles = gsap.utils.toArray(".section-title:not(.hero-title)");
+    sectionTitles.forEach(title => {
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+
+
+    // --- HORIZONTAL SCROLL FOR ACADEMIC JOURNEY ---
+    const horizontalContainer = document.querySelector(".horizontal-scroll-container");
+    const panels = gsap.utils.toArray(".journey-panel");
+
+    if (horizontalContainer && panels.length > 0) {
+        // Calculate the total width needed based on panels
+        const totalWidth = panels.length * 80; // 80vw per panel
+        horizontalContainer.style.width = `${totalWidth}vw`;
+
+        gsap.to(panels, {
+            xPercent: -100 * (panels.length - 1), // Move left
+            ease: "none", // Important for scrub
+            scrollTrigger: {
+                trigger: ".horizontal-scroll-wrapper",
+                pin: true, // Pin the wrapper in place while scrolling horizontally
+                scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to scrollbar
+                snap: 1 / (panels.length - 1), // Optional: snap to panels
+                end: () => "+=" + horizontalContainer.offsetWidth // How long to scroll vertically before unpinning
+            }
+        });
+    }
+
+
+    // --- Cards Staggered Fade Up ---
+    const fadeUpSections = [
+        ".skills-bento-grid", 
+        ".projects-grid", 
+        ".split-layout", 
+        ".startup-grid"
+    ];
+
+    fadeUpSections.forEach(selector => {
+        const elements = document.querySelectorAll(`${selector} > *`);
+        if (elements.length > 0) {
+            gsap.from(elements, {
                 scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
+                    trigger: selector,
+                    start: "top 80%"
                 },
-                y: 30,
+                y: 50,
                 opacity: 0,
                 duration: 0.8,
+                stagger: 0.15,
                 ease: "power3.out"
             });
         }
     });
 
-    // --- Academic Journey Animation ---
-    const yearCards = gsap.utils.toArray(".year-card");
-    yearCards.forEach((yearCard) => {
-        const yearHeader = yearCard.querySelector(".year-header");
-        const semesterCards = yearCard.querySelectorAll(".semester-card");
-        
-        const tlYear = gsap.timeline({
-            scrollTrigger: {
-                trigger: yearCard,
-                start: "top 85%",
-                toggleActions: "play none none none"
-            }
-        });
-
-        tlYear.from(yearHeader, {
-            x: -30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out"
-        });
-
-        if (semesterCards.length > 0) {
-            tlYear.from(semesterCards, {
-                y: 40,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.15,
-                ease: "power3.out"
-            }, "-=0.4");
-        }
-    });
-
-    // --- Skills Animation ---
-    gsap.from(".skill-category", {
+    // --- Footer Links Hover Stagger ---
+    gsap.from(".social-link", {
         scrollTrigger: {
-            trigger: ".skills-section",
+            trigger: ".footer",
             start: "top 80%"
         },
-        y: 30,
+        x: -50,
         opacity: 0,
-        duration: 0.6,
+        duration: 0.8,
         stagger: 0.1,
-        ease: "power3.out"
-    });
-
-    // --- Projects Animation ---
-    gsap.from(".project-card", {
-        scrollTrigger: {
-            trigger: ".projects-section",
-            start: "top 80%"
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
-
-    // --- Experience & Achievements Animation ---
-    gsap.from(".timeline-card", {
-        scrollTrigger: {
-            trigger: ".experience-section",
-            start: "top 80%"
-        },
-        x: -30,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out"
-    });
-
-    gsap.from(".achievement-list li", {
-        scrollTrigger: {
-            trigger: "#achievements",
-            start: "top 80%"
-        },
-        x: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "power3.out"
-    });
-
-    // --- Startup Animation ---
-    gsap.from(".startup-card", {
-        scrollTrigger: {
-            trigger: ".startup-section",
-            start: "top 80%"
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-    });
-
-    gsap.from(".startup-block", {
-        scrollTrigger: {
-            trigger: ".startup-grid",
-            start: "top 85%"
-        },
-        scale: 0.95,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
         ease: "back.out(1.2)"
     });
 });
