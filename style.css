@@ -534,8 +534,8 @@ html {
 .journey-section {
     overflow: hidden; /* Hide horizontal overflow during scroll */
     height: 100vh; /* Lock height to viewport to prevent bottom cut-off during pin */
-    padding-top: 100px; /* Account for navbar */
-    padding-bottom: 40px;
+    padding-top: 60px; /* Reduced from 100px to give cards more space */
+    padding-bottom: 20px; /* Reduced from 40px */
     display: flex;
     flex-direction: column;
 }
@@ -545,7 +545,7 @@ html {
 }
 
 .journey-section .section-title {
-    margin-bottom: 20px; /* Tighter spacing to save vertical room */
+    margin-bottom: 0px; /* Reduced from 20px to save vertical room */
 }
 
 .horizontal-scroll-wrapper {
@@ -606,15 +606,13 @@ html {
     overflow-y: auto; /* Enable internal scrolling if cards are too tall */
     padding-bottom: 10px;
     padding-right: 10px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
-/* Custom thin scrollbar for panel content */
+/* Hide scrollbar for panel content but keep functionality */
 .panel-content::-webkit-scrollbar {
-    width: 6px;
-}
-.panel-content::-webkit-scrollbar-thumb {
-    background-color: var(--border-color);
-    border-radius: 10px;
+    display: none;
 }
 
 .semester-card {
