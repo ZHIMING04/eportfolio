@@ -31,6 +31,7 @@ html {
 }
 
 body {
+    font-size: 18px; /* Larger base font for comfort */
     font-family: var(--font-sans);
     background-color: var(--bg-main);
     color: var(--text-main);
@@ -262,25 +263,26 @@ body {
 .hero-titles {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 32px;
+    gap: 16px;
+    margin-bottom: 40px;
 }
 
 .role-tag {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: clamp(1.8rem, 4vw, 3.5rem); /* Massive, comfortable text */
     font-weight: 700;
-    padding: 8px 16px;
-    background: var(--bg-card);
-    border-radius: 100px;
-    border: 1px solid var(--border-color);
+    padding: 12px 28px;
+    border-radius: 12px;
+    color: #111;
+    border: none;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); /* Solid shadow */
+    letter-spacing: -0.02em;
+    display: inline-block;
 }
 
-.role-tag.outline {
-    background: transparent;
-    color: var(--accent-orange);
-    border-color: rgba(245, 131, 32, 0.3);
-}
+.role-tag.bg-green { background-color: var(--accent-green); }
+.role-tag.bg-pink { background-color: #fca5a5; } /* Vibrant pinkish */
+.role-tag.bg-orange { background-color: var(--accent-orange); }
 
 .hero-intro {
     font-size: 1.3rem;
@@ -422,12 +424,22 @@ body {
     gap: 24px;
 }
 
+.semester-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .semester-card h4 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     margin-bottom: 24px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border-color);
+}
+
+.course-list {
+    flex-grow: 1; /* Pushes the tags to the bottom to keep cards consistent */
 }
 
 .course-list h5 {
@@ -631,9 +643,19 @@ body {
 
 /* --- Footer --- */
 .footer {
-    border-top: 1px solid var(--border-color);
+    background-color: #fcfce9; /* GSAP light cream footer */
+    color: #111;
+    border-top: none;
     padding-top: 100px;
     padding-bottom: 40px;
+}
+
+.footer .text-muted, .footer .muted-text {
+    color: #555;
+}
+
+.footer .text-main, .footer .section-title {
+    color: #111;
 }
 
 .footer-grid {
@@ -653,9 +675,9 @@ body {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: #111;
     text-decoration: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     padding-bottom: 16px;
     display: flex;
     justify-content: space-between;
@@ -663,16 +685,26 @@ body {
 }
 
 .social-link:hover {
-    color: var(--accent-green);
-    border-color: var(--accent-green);
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
     padding-left: 20px;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(0,0,0,0.1);
     padding-top: 32px;
+}
+
+.footer .btn-primary {
+    background-color: #111;
+    color: #fcfce9;
+}
+
+.footer .btn-primary:hover {
+    background-color: var(--accent-orange);
+    color: #111;
 }
 
 /* Responsive */

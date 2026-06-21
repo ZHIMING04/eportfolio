@@ -89,11 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
             xPercent: -100 * (panels.length - 1), // Move left
             ease: "none", // Important for scrub
             scrollTrigger: {
-                trigger: ".horizontal-scroll-wrapper",
-                pin: true, // Pin the wrapper in place while scrolling horizontally
-                scrub: 1, // Smooth scrubbing, takes 1 second to "catch up" to scrollbar
-                snap: 1 / (panels.length - 1), // Optional: snap to panels
-                end: () => "+=" + horizontalContainer.offsetWidth // How long to scroll vertically before unpinning
+                trigger: ".journey-section", // Pin the whole section instead of just the wrapper
+                pin: true, 
+                scrub: 1, // Smooth scrubbing
+                start: "top 12%", // Start pinning when the section is slightly below the top (accounts for navbar)
+                snap: 1 / (panels.length - 1),
+                end: () => "+=" + horizontalContainer.offsetWidth
             }
         });
     }
