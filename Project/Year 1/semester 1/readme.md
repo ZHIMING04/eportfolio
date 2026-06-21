@@ -1,4 +1,3 @@
-```markdown
 # Year 1 Semester 1 — Computing Foundations
 
 ## 📘 Semester Overview
@@ -162,5 +161,4 @@ The biggest lesson from this semester was that computing is not only about codin
 It involves logic, systems, hardware, users, and problem-solving.
 
 This semester built the foundation for my future learning in software development, data engineering, cloud computing, and system design.
-```
 
